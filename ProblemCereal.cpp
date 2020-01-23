@@ -22,8 +22,8 @@ int main(int argc, char **argv) {
 
 	// DECLARE VARIABLES
 	const double OZ_IN_TON = 35273.92;
-	double weightOz = 0;
-	double weightTons = 0;
+	double weightOz = 0.0;
+	double weightTons = 0.0;
 	int boxesNeeded = 0;	// This program assumes whole boxes are used.
 	
 	// GET INPUT FROM USER
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 	boxesNeeded = OZ_IN_TON / weightOz;
 
 	// CHECK IF EXTRA BOX IS NEEDED
-	if ((1 - (weightTons * boxesNeeded)) > 0) {	// If there is a little more weight needed to yield a ton, count the extra weight as one extra box needed.
+	if ((weightTons * boxesNeeded) < 1.0) {	// If there is a little more weight needed to yield a ton, count the extra weight as one extra box needed.
 		boxesNeeded += 1;
 	}
 	

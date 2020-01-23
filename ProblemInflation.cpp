@@ -34,11 +34,11 @@ using namespace std;
 int main(int argc, char **argv) {
 
 	// DECLARE VARIABLES
-	double nowCost = 0;
-	double futCost = 0;
+	double nowCost = 0.0;
+	double futCost = 0.0;
+	double infRate = 0.0;
 	int years = 0;
-	double infRate = 0;
-	
+
 	
 	// GET INPUT FROM USER
 	cout << "Cost of item: ";
@@ -50,12 +50,12 @@ int main(int argc, char **argv) {
 	
 	
 	// PERFORM CALCULATIONS
-	infRate *= .01;
+	infRate *= .01;	// Convert inflation rate from whole number to percentage
 	
 	futCost = nowCost;
 	
 	for(int i = 0; i < years; ++i) {
-		futCost *= (1 + infRate);	// Calculating the future cost using compound interest.
+		futCost *= (1 + infRate);	// Calculating the future cost using compound interest
 	}
 	
 	

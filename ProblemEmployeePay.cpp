@@ -51,13 +51,13 @@ int main(int argc, char **argv) {
 	
 	
 	// PERFORM CALCULATIONS
-	if (hoursWorked > REG_HRS) {
-		overtime = hoursWorked - REG_HRS;
+	if (hoursWorked > REG_HRS) {	// If the hours worked exceed regular hours...
+		overtime = hoursWorked - REG_HRS;	// ...store the difference in overtime (otherwise, overtime will stay 0)
 	}
 	
-	grossPay = ((hoursWorked - overtime) * WAGE) + ((overtime) * (WAGE * 1.5));
+	grossPay = ((hoursWorked - overtime) * WAGE) + ((overtime) * (WAGE * 1.5));	// Regular hours pay + overtime pay
 
-	withholding = (grossPay * (SOC_SEC_TAX + FED_INC_TAX + STA_INC_TAX)) + MED_INSURANCE;
+	withholding = (grossPay * (SOC_SEC_TAX + FED_INC_TAX + STA_INC_TAX)) + MED_INSURANCE;	// Tax percentages are summed, then multiplied by gross pay; Insurance fees are added afterwards
 
 	takeHome = grossPay - withholding;
 	
